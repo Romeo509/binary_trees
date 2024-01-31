@@ -1,7 +1,9 @@
 #include "binary_trees.h"
 /**
- * free_q - The function to free the node
- * @head: The node of this linked list
+ * new_node - The new node
+ * @node: The node of this linked list
+ *
+ * Return: node
  */
 link_t *new_node(binary_tree_t *node)
 {
