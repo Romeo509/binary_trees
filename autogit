@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
 git add .
-git commit -m 'completed'
+git commit -m 'done'
 git push
