@@ -9,7 +9,7 @@
  */
 int max(int a, int b)
 {
-    return (a > b ? a : b);
+return (a > b ? a : b);
 }
 
 /**
@@ -19,10 +19,10 @@ int max(int a, int b)
  */
 size_t height(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
+if (tree == NULL)
+return (0);
 
-    return (1 + max(height(tree->left), height(tree->right)));
+return (1 + max(height(tree->left), height(tree->right)));
 }
 
 /**
@@ -34,29 +34,29 @@ size_t height(const binary_tree_t *tree)
  */
 int bal_avl(const binary_tree_t *tree, int lower, int high)
 {
-    size_t height_l, height_r, balancer;
+size_t height_l, height_r, balancer;
 
-    if (tree != NULL)
-    {
-        if (tree->n > high || tree->n < lower)
-        {
-            return (0);
-        }
+if (tree != NULL)
+{
+if (tree->n > high || tree->n < lower)
+{
+return (0);
+}
 
-        height_l = height(tree->left);
-        height_r = height(tree->right);
-        balancer = height_l > height_r ? height_l - height_r : height_r - height_l;
+height_l = height(tree->left);
+height_r = height(tree->right);
+balancer = height_l > height_r ? height_l - height_r : height_r - height_l;
 
-        if (balancer > 1)
-        {
-            return (0);
-        }
+if (balancer > 1)
+{
+return (0);
+}
 
-        return (bal_avl(tree->left, lower, tree->n - 1) &&
-                bal_avl(tree->right, tree->n + 1, high));
-    }
+return (bal_avl(tree->left, lower, tree->n - 1) &&
+bal_avl(tree->right, tree->n + 1, high));
+}
 
-    return (1);
+return (1);
 }
 
 /**
@@ -66,11 +66,11 @@ int bal_avl(const binary_tree_t *tree, int lower, int high)
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-    {
-        return (0);
-    }
+if (tree == NULL)
+{
+return (0);
+}
 
-    return (bal_avl(tree, INT_MIN, INT_MAX));
+return (bal_avl(tree, INT_MIN, INT_MAX));
 }
 
